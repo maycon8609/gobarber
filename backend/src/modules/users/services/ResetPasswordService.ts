@@ -1,7 +1,6 @@
 import { injectable, inject } from 'tsyringe';
 import { isAfter, addHours } from 'date-fns';
 
-// import User from '@modules/users/infra/typeorm/entities/User';
 import AppError from '@shared/errors/AppError';
 
 import IUsersRepository from '../repositories/IUsersRepository';
@@ -14,7 +13,7 @@ interface IRequest {
 }
 
 @injectable()
-class SendForgotPasswordEmailService {
+class ResetPasswordEmailService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -52,4 +51,4 @@ class SendForgotPasswordEmailService {
   }
 }
 
-export default SendForgotPasswordEmailService;
+export default ResetPasswordEmailService;
